@@ -9,6 +9,7 @@ import Signsprov from "./components/Signsprov";
 
 
 
+
 const App = () => {
   return (
 
@@ -18,8 +19,12 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
+
           <Route exact path="/signpara" element={<Signpara />} />
           <Route exact path="/signsprov" element={<Signsprov />} />
+
+          <Route exact path="/Signpara" element={<Signpara />} />
+
           
         </Routes>
       </BrowserRouter>

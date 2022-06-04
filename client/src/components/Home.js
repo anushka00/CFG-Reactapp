@@ -5,6 +5,7 @@ import { Navbar } from './Navbar'
 import  Signpara from "../components/Signpara";
 import Signsprov from '../components/Signsprov';
 
+
 export const Home = () => {
   return (
   <>
@@ -50,6 +51,7 @@ export const Home = () => {
        </div>
 
      </section>
+    
      </> 
   )
 }
