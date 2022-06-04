@@ -1,0 +1,50 @@
+import React from 'react';
+
+
+const Checkstatus_P = () => {
+  return (
+      <div>
+    <div className="wrapper">
+      <Card
+        patient_ID="1"
+        service="consult"
+        location="hyd"
+      />
+
+        <Card
+        patient_ID="2"
+        service="icu"
+        location="chennai"
+      />
+
+
+    </div>
+    <div className='float-start'>
+    <h5 className=''>Color</h5>
+    <p className='text-success'>Green-Accepted</p>
+    <p className='text-danger'>Red-Rejected</p>
+    </div>
+    </div>
+  );
+}
+
+function Card(props) {
+  return (
+      
+    <div>
+    <div border="secondary" className="card w-50 mx-auto">
+      <div className="card__body">
+      <p className="card__title">{props.patient_ID}</p>
+        <p className="card__title">{props.service}</p>
+        <p className="card__description">{props.location}</p>
+      </div>
+    </div>
+    </div>
+    
+    
+    
+
+  );
+}
+
+export default Checkstatus_P;

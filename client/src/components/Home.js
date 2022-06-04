@@ -2,6 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import web from "../images/img2.jpg"
 import { Navbar } from './Navbar'
+<<<<<<< HEAD
+=======
+import  Signpara from "../components/Signpara";
+import Signsprov from '../components/Signsprov';
+>>>>>>> 27f8af342c5c6c41b4d648c1033765849f5820ee
 
 
 export const Home = () => {
@@ -28,7 +33,7 @@ export const Home = () => {
                </div>
 
                <div className="mt-3">
-                 <NavLink to="/service" className='btn-get-started'>
+                 <NavLink to="/signsprov" className='btn-get-started'>
                    SIGN UP FOR SERVICE PROVIDERS 
                  </NavLink>
                </div>
@@ -49,6 +54,7 @@ export const Home = () => {
        </div>
 
      </section>
+    
      </> 
   )
 }
