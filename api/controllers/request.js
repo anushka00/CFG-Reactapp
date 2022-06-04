@@ -1,6 +1,7 @@
 const { request } = require('express');
 const mongoose = require('mongoose');
 const Request = require('../models/request');
+var nodemailer = require('nodemailer');
 
 exports.getAllRequest = (req, res, next) => {
     Request
@@ -73,5 +74,49 @@ exports.getRequestByStatus = (req, res, next) => {
 };
 
 
+exports.updateOneReuqest = (req, res, next) => {
+    const requestId = req.params.requestId;
+    Order
+        .update({ _id: requestId }, { $set: req.body })
+        .exec()
+        .then(result => {
+            return res.status(200).json({
+                message: 'Updated Request Successfully!',
+                result: result
+            });
+        })
+        .catch(error => {
+            next(error);
+        });
+};
 
+exports.sendMail = (req, res, next) => {
+    var transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+          user: process.env.MAIL,
+          pass: process.env.PASSWORD
+      }
+    });
 
+    var mailOptions = {
+      from: process.env.MAIL,
+      to: req.body.to,
+      subject: req.body.subject,
+      text: req.body.text
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      }
+      else {
+        console.log('Email sent: ' + info.response);
+        return res.status(200).json({
+            result: "Email Send Successfully",
+        });
+      }
+    });
+  };
