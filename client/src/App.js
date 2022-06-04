@@ -4,6 +4,8 @@ import { Home  } from "./components/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { About } from "./components/About";
 import Signpara from "./components/Signpara";
+import Signsprov from "./components/Signsprov";
+
 
 
 
@@ -17,6 +19,7 @@ const App = () => {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/signpara" element={<Signpara />} />
+          <Route exact path="/signsprov" element={<Signsprov />} />
           
         </Routes>
       </BrowserRouter>

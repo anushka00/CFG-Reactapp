@@ -1,89 +1,163 @@
-import React from 'react'
+import React , {useState} from 'react'
+import './signup.css'
 
 function Signsprov() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [location, setLocation] = useState('');
+  const [services, setServices] = useState('');
+
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+
+
+  const handleName = (e) => {
+    setName(e.target.value);
+    setSubmitted(false);
+  };
+ 
+  
+  
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+    setSubmitted(false);
+  };
+ 
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+    setSubmitted(false);
+  };
+
+
+  const handleLocation = (e) => {
+    setLocation(e.target.value);
+    setSubmitted(false);
+  };
+
+  const handleServices = (e) => {
+    setLocation(e.target.value);
+    setSubmitted(false);
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name === '' || email === '' || password === '') {
+      setError(true);
+    } else {
+      setSubmitted(true);
+      setError(false);
+    }
+  };
+ 
+
+  const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? '' : 'none',
+        }}>
+        <h1>User {name} successfully registered!!</h1>
+      </div>
+    );
+  };
+ 
+  
+  const errorMessage = () => {
+    return (
+      <div
+        className="error"
+        style={{
+          display: error ? '' : 'none',
+        }}>
+        <h1>Please enter all the fields</h1>
+      </div>
+    );
+  };
+ 
+
+  
+
   return (
       <>
        <h2>Signup for Service Provider </h2>
-       <form>
-  <div className="mb-3">
-    <label for="nameInput" class="form-label">Name of the Hospital/Clinic</label>
-    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" />
-    </div>
+       <form clasName="form">
 
-    <div className="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-  </div>
+ 
+       <label className="label">Name of the Hospital/Client</label>
+        <input onChange={handleName} className="input"
+          value={name} type="text" />
+ 
+        <label className="label">Email</label>
+        <input onChange={handleEmail} className="input"
+          value={email} type="email" />
 
-    <div className="mb-3">
-     <label for="contact" class="form-label">Contact</label>
-    <input type="number" class="form-control" id="contact" aria-describedby="contactlHelp" />
-  </div>
-
-  <div className=" mb-3">
-  <p>
-        Location :*
-        <select name="location" id="state" required="">
-          <option value="">Select your State</option>
-          <option value="Visa">Andhra Pradesh</option>
-          <option value="Visa">Arunachal Pradesh</option>
-          <option value="Visa">Assam</option>
-          <option value="Visa">Bihar</option>
-          <option value="Visa">Chhattisgarh</option>
-          <option value="Visa">Goa</option>
-          <option value="Visa">Gujarat</option>
-          <option value="Visa">Haryana</option>
-          <option value="Visa">Himachal Pradesh</option>
-          <option value="Visa">Jammu and Kashmir
+        <label className="label">Password</label>
+        <input onChange={handlePassword} className="input"
+          value={password} type="password" />
+ 
+ <label className="label">Location</label>
+        <select  className="label input"   onChange={handleLocation} value={location} required="">
+          <option value="" classname="label input">Select your State</option>
+          <option value="AP">Andhra Pradesh</option>
+          <option value="Arunachal">Arunachal Pradesh</option>
+          <option value="As">Assam</option>
+          <option value="Bhr">Bihar</option>
+          <option value="Chts">Chhattisgarh</option>
+          <option value="Goa">Goa</option>
+          <option value="Guj">Gujarat</option>
+          <option value="Har">Haryana</option>
+          <option value="Hima">Himachal Pradesh</option>
+          <option value="JK">Jammu and Kashmir
 </option>
-          <option value="Visa">Jharkhand</option>
-          <option value="Visa">Karnataka</option>
-          <option value="Visa">Kerala</option>
-          <option value="Visa">Madhya Pradesh</option>
-          <option value="Visa">Maharashtra</option>
-          <option value="Visa">Manipur</option>
-          <option value="Visa">Meghalaya</option>
-          <option value="Visa">Mizoram</option>
-          <option value="Visa">Nagaland</option>
-          <option value="Visa">Odisha</option>
-          <option value="Visa">     Punjab</option>
-          <option value="Visa">Rajasthan</option>
-          <option value="Visa">Sikkim</option>
-          <option value="Visa">Tamil Nadu</option>
-          <option value="Visa">Telangana</option>
-          <option value="Visa">Tripura</option>
-          <option value="Visa">Uttarakhand</option>
-          <option value="Visa">Uttar Pradesh</option>
-          <option value="Visa">West Bengal</option>
-          <option value="Visa">Andaman and Nicobar Islands</option>
-          <option value="Visa">Chandigarh</option>
-          <option value="Visa">Dadra and Nagar Haveli</option>
-          <option value="Visa">Daman and Diu</option>
-          <option value="Visa">Delhi</option>
-          <option value="Visa">Lakshadweep</option>
-          <option value="Visa">Puducherry</option>
+          <option value="Jhk">Jharkhand</option>
+          <option value="krnt">Karnataka</option>
+          <option value="krl">Kerala</option>
+          <option value="MP">Madhya Pradesh</option>
+          <option value="maha">Maharashtra</option>
+          <option value="Mani">Manipur</option>
+          <option value="Meghal">Meghalaya</option>
+          <option value="Mizo">Mizoram</option>
+          <option value="naga">Nagaland</option>
+          <option value="odi">Odisha</option>
+          <option value="Pjb">     Punjab</option>
+          <option value="raj">Rajasthan</option>
+          <option value="Skm">Sikkim</option>
+          <option value="Tn">Tamil Nadu</option>
+          <option value="tel">Telangana</option>
+          <option value="Tri">Tripura</option>
+          <option value="utk">Uttarakhand</option>
+          <option value="up">Uttar Pradesh</option>
+          <option value="wb">West Bengal</option>
+          <option value="andaman">Andaman and Nicobar Islands</option>
+          <option value="chnd">Chandigarh</option>
+          <option value="dadar">Dadra and Nagar Haveli</option>
+          <option value="Daman">Daman and Diu</option>
+          <option value="del">Delhi</option>
+          <option value="lak">Lakshadweep</option>
+          <option value="pudu">Puducherry</option>
         
       
 
         </select>
-      </p>
-  </div>
-
-  <div className=" mb-3">
-   <p>
-     Types of Services:
-     <select name="types-service" id="state"></select>
-
-   </p>
-
-  </div>
   
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" />
-  </div>
+        <label className="label">Services</label>
+
+
+ <select  className="label input"   onChange={handleServices} value={services} required="">
+  <option value="" classname="label input">Select your service</option>
+  <option value="npo">Non-Profit hospital</option>
+  <option value="gov">Government hospital</option>
+  <option value="prv">Private Hospital</option>
+  </select>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  
+  <button type="submit" class="btn btn-primary">Signup</button>
 </form>
 </>
   )

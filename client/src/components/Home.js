@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import web from "../images/img2.jpg"
 import { Navbar } from './Navbar'
 import  Signpara from "../components/Signpara";
+import Signsprov from '../components/Signsprov';
 
 export const Home = () => {
   return (
@@ -28,7 +29,7 @@ export const Home = () => {
                </div>
 
                <div className="mt-3">
-                 <NavLink to="/service" className='btn-get-started'>
+                 <NavLink to="/signsprov" className='btn-get-started'>
                    SIGN UP FOR SERVICE PROVIDERS 
                  </NavLink>
                </div>
