@@ -1,8 +1,12 @@
 import React , {useState} from 'react'
 import './signup.css'
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 function Signpara() {
+
+  const navigate = useNavigate();
+
 
   // States for registration
   const [name, setName] = useState('');
@@ -12,7 +16,7 @@ function Signpara() {
 
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
- 
+
 
 
 
@@ -39,13 +43,13 @@ function Signpara() {
   };
 
 
- 
+
   const handlePassword = (e) => {
     setPassword(e.target.value);
     setSubmitted(false);
   };
 
- 
+
 
 
 
@@ -60,7 +64,7 @@ function Signpara() {
     }
   };
 
- 
+
   const successMessage = () => {
     return (
       <div
@@ -74,7 +78,7 @@ function Signpara() {
   };
 
 
-  
+
 
   const errorMessage = () => {
     return (
@@ -89,7 +93,7 @@ function Signpara() {
   };
 
     function registerUser(event) {
-
+      console.log("ABCD");
       var user = {
         email:email,
         password:password,
@@ -99,7 +103,8 @@ function Signpara() {
 
       axios.post("http://localhost:5000/paramedics/signup", user).then(response => {
         console.log(response.data);
-        alert("User Created!");
+        navigate('/login');
+
       });
 
       console.log(user);
@@ -122,7 +127,7 @@ function Signpara() {
       </div>
 
       <form>
-        
+
         <label className="label">Name</label>
         <input onChange={handleName} className="input"
           value={name} type="text" />
@@ -138,8 +143,8 @@ function Signpara() {
         <label className="label">Password</label>
         <input onChange={handlePassword} className="input"
           value={password} type="password" />
- 
-        <button onClick={handleSubmit} className="btn" type="submit">
+
+        <button onClick={registerUser} className="btn" type="submit">
    Signup
         </button>
       </form>
