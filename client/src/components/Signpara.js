@@ -4,7 +4,7 @@ import axios from "axios";
 
 function Signpara() {
 
-  // States for registration
+  
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -114,7 +114,7 @@ function Signpara() {
       </div>
 
 
-      {/* Calling to the methods */}
+     
 
       <div className="messages">
         {errorMessage()}

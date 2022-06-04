@@ -39,7 +39,7 @@ function Signsprov() {
   };
 
   const handleServices = (e) => {
-    setLocation(e.target.value);
+    setServices(e.target.value);
     setSubmitted(false);
   };
 
@@ -85,10 +85,19 @@ function Signsprov() {
 
   return (
       <>
-       <h2>Signup for Service Provider </h2>
-       <form clasName="form">
+       <div className="form">
+      <div>
+        <h1>Signup For Service Provider</h1>
+      </div>
 
- 
+
+     
+
+      <div className="messages">
+        {errorMessage()}
+        {successMessage()}
+      </div>
+    <form>
        <label className="label">Name of the Hospital/Client</label>
         <input onChange={handleName} className="input"
           value={name} type="text" />
@@ -159,6 +168,7 @@ function Signsprov() {
   
   <button type="submit" class="btn btn-primary">Signup</button>
 </form>
+</div>
 </>
   )
 }
