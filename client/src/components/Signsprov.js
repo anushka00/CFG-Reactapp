@@ -113,7 +113,7 @@ function Signsprov() {
           <div className="formpage">
             <div className="form">
       <div>
-        <h1>Signup For Service Provider</h1>
+        <h3>Signup For Service Provider</h3>
       </div>
 
 
@@ -125,27 +125,31 @@ function Signsprov() {
       </div>
     
 
-      <div className="messages">
-        {errorMessage()}
-        {successMessage()}
-      </div>
-       <form clasName="form">
+     
+       <form >
 
-
+<div style={{textAlign:"center"}}>
        <label className="label">Name of the Hospital/Client</label>
         <input onChange={handleName} className="input"
-          value={name} type="text" />
+          value={name} type="text"  />
+</div>
 
-        <label className="label">Email</label>
+<div style={{textAlign:"center"}}>
+<label className="label">Email</label>
         <input onChange={handleEmail} className="input"
           value={email} type="email" />
-
-        <label className="label">Password</label>
+</div>
+       
+       <div style={{textAlign:"center"}}>
+       <label className="label">Password</label>
         <input onChange={handlePassword} className="input"
           value={password} type="password" />
 
+       </div>
+
+       <div style={{textAlign:"center"}}>
  <label className="label">Location</label>
-        <select  className="label input"   onChange={handleLocation} value={location} required="">
+        <select  className="label input"  style={{width:"80%",marginLeft:"10%"}} onChange={handleLocation} value={location} required="">
           <option value="" classname="label input">Select your State</option>
           <option value="AP">Andhra Pradesh</option>
           <option value="Arunachal">Arunachal Pradesh</option>
@@ -188,19 +192,22 @@ function Signsprov() {
 
 
         </select>
+        </div>
+
+        <div style={{textAlign:"center"}}>
 
         <label className="label">Services</label>
 
 
- <select  className="label input"   onChange={handleServices} value={services}>
+ <select  className="label input" style={{width:"80%",marginLeft:"10%"}}   onChange={handleServices} value={services}>
   <option value="" classname="label input">Select your service</option>
   <option value="npo">Non-Profit hospital</option>
   <option value="gov">Government hospital</option>
   <option value="prv">Private Hospital</option>
   </select>
 
-
-  <button type="submit" onClick={ registerUser } class="btn btn-primary">Signup</button>
+</div>
+  <button type="submit" onClick={ registerUser } class="btn ">Signup</button>
 </form>
 </div>
 </div>
