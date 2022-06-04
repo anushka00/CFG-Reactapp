@@ -1,18 +1,29 @@
 
-import './App.css';
-import Signpara from './components/Signpara';
-// import Signsprov from './components/Signsprov';
+import "./App.css";
+import { Home  } from "./components/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { About } from "./components/About";
+import Signpara from "./components/Signpara";
 
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-           <h3>Daksha Home</h3>
-      <Signpara/>
-     {/* <Signsprov/>  */}
 
-    </div>
-  );
+    <div className="App">
+       
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/signpara" element={<Signpara />} />
+          
+        </Routes>
+      </BrowserRouter>
+
+
+</div>
+  )
 }
 
 export default App;
