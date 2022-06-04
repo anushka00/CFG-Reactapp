@@ -6,10 +6,12 @@ export const Logpara = () => {
  return(
      <>
     <Navbar/>
-   <div className="form-body">
+    <form>
+         <div className="form-body">
         <div className="row">
             <div className="form-holder">
                 <div className="form-content">
+                <div class="form-items">
      <h1>LOGGED IN AS A PARAMEDIC </h1>
      <label>PATIENT ID </label>
      <input name="number"  />
@@ -44,7 +46,9 @@ export const Logpara = () => {
                 </div>
             </div>
         </div> 
-        
+        </div>
+        </form>
+
 </>
  );
 }
