@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import web from "../images/img2.jpg"
 import { Navbar } from './Navbar'
-import  Signpara from "../components/Signpara";
+
 
 export const Home = () => {
   return (
