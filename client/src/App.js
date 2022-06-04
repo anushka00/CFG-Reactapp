@@ -18,7 +18,7 @@ const App = () => {
           <Route exact path="/signpara" element={<Signpara />} />
           <Route exact path="/loginpara" element={<Logpara />}/>
           <Route exact path="/signsprov" element={<Signsprov />} />
-          <Route exact path="/Checkstatus_P" element={<Checkstatus_P />} />
+
         </Routes>
       </BrowserRouter>
   );
