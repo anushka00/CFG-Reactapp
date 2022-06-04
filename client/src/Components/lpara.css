@@ -1,72 +1,45 @@
 *{
-    margin: 7px;
-    color: rgb(248, 246, 246);
-    font-family:'Times New Roman', Times, serif;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-
-background-image: url(https://image.freepik.com/free-vector/modern-mosaic-wallpaper-rose-gold-black_53876-58064.jpg);
-background-repeat: no-repeat;
-background-size:cover;
-
-font-family:Verdana, Geneva, Tahoma, sans-serif;
-margin: 20px 350px;
-margin-right: 10px;
-margin-top: auto;
-font-size: 15px;
-padding: 200px;
-width:fit-content;
-
+    font-size: 14px;
+    background: #f2f2f2f;
 }
 
 .container{
-background-color:rgb(136, 76, 36);
-padding:5px 25px  15px  50px;
-border: 1px solid rgb(17, 13, 13);
-border-radius: 10px;
-}
-.main_heading 
-{
-
-background-color: black;
-text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: white;
+    width: 500px;
+    padding: 100px;
+    margin: 50px auto 0;
+    border-top: 5px solid rgb(0, 200, 255);
+    box-shadow: 0 0 7px 5px rgba(0,0,0,0.5);
 }
 
-.fields
-{
-text-align: center;
-}
-
-input[type="text"], input[type="cname"], input[type="ccname"], input[type="expmonth"],.new1{
-background-color: #232021;
-height: 30px;
-display: inline-block;
-margin-bottom: 5px;
-padding: 5px;
+.container h2{
+    font-size: 54px;
+    line-height: 44px;
+    padding: 30px;
+    text-align: center;
 
 }
 
-input[type="submit"]
-{
-background-color: rgb(67, 24, 168);
-color: white;
-padding:12px 20px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-width: 100%;
-}
-input[type="submit"]:hover{
-background-color: #090f0a;
+.input-name{
+    width: 100%;
+    position: relative;
+    margin: 30px auto;
 }
 
-.clip{
-align-content: center;
-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-
+.country .name{
+    width: 100%;
+    padding: 8px 0 8px 40px;
 }
 
-img{
-height: 20%;
+.text-name{
+    width: 100%;
+    padding: 8px 0 8px 40px;
 }
