@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Checkstatus_P.css";
 
 
 const Checkstatus_P = () => {
@@ -19,7 +20,7 @@ const Checkstatus_P = () => {
 
 
     </div>
-    <div className='float-start'>
+    <div className='matter'>
     <h5 className=''>Color</h5>
     <p className='text-success'>Green-Accepted</p>
     <p className='text-danger'>Red-Rejected</p>
@@ -31,14 +32,15 @@ const Checkstatus_P = () => {
 function Card(props) {
   return (
       
-    <div>
-    <div border="secondary" className="card w-50 mx-auto">
+    <div className='whole'>
+    <div border="secondary" className="card">
       <div className="card__body">
       <p className="card__title">{props.patient_ID}</p>
         <p className="card__title">{props.service}</p>
         <p className="card__description">{props.location}</p>
       </div>
     </div>
+    <br></br>
     </div>
     
     
