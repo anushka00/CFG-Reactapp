@@ -6,13 +6,13 @@ export const Logpara = () => {
  return(
      <>
      <Navbar/>
-     <div className="container">
+     <div className="container1">
        <h3>Request for Service</h3>
        <div className="form-container">
          <form>
            <div className="input-name">
            <i class="fa-solid fa-user"></i>
-           <input type="number" placeholder="Enter Id" className="name"/>
+           <input placeholder="Enter Id" className="name" />
            </div>
 
            <div className="input-name">
