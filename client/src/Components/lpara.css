@@ -1,0 +1,72 @@
+*{
+    margin: 7px;
+    color: rgb(248, 246, 246);
+    font-family:'Times New Roman', Times, serif;
+}
+
+body{
+
+background-image: url(https://image.freepik.com/free-vector/modern-mosaic-wallpaper-rose-gold-black_53876-58064.jpg);
+background-repeat: no-repeat;
+background-size:cover;
+
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+margin: 20px 350px;
+margin-right: 10px;
+margin-top: auto;
+font-size: 15px;
+padding: 200px;
+width:fit-content;
+
+}
+
+.container{
+background-color:rgb(136, 76, 36);
+padding:5px 25px  15px  50px;
+border: 1px solid rgb(17, 13, 13);
+border-radius: 10px;
+}
+.main_heading 
+{
+
+background-color: black;
+text-align: center;
+}
+
+.fields
+{
+text-align: center;
+}
+
+input[type="text"], input[type="cname"], input[type="ccname"], input[type="expmonth"],.new1{
+background-color: #232021;
+height: 30px;
+display: inline-block;
+margin-bottom: 5px;
+padding: 5px;
+
+}
+
+input[type="submit"]
+{
+background-color: rgb(67, 24, 168);
+color: white;
+padding:12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+width: 100%;
+}
+input[type="submit"]:hover{
+background-color: #090f0a;
+}
+
+.clip{
+align-content: center;
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+}
+
+img{
+height: 20%;
+}
