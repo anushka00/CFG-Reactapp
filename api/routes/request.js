@@ -13,4 +13,6 @@ router.get('/status/:request_status', RequestsController.getRequestByStatus);
 
 router.patch('/:requestId', RequestsController.updateOneReuqest);
 
+router.delete('/:requestId', RequestsController.deleteOneRequest);
+
 module.exports = router;
