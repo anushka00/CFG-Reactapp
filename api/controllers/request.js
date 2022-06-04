@@ -18,8 +18,6 @@ exports.getAllRequest = (req, res, next) => {
         })
 };
 
-
-
 exports.createOneRequest = (req, res, next) => {
 
     console.log("Creating Order...")
@@ -29,7 +27,8 @@ exports.createOneRequest = (req, res, next) => {
         patientId:req.body.patientId,
         request_status: req.body.request_status,
         service_provider: req.body.service_provider,
-        location:req.body.location
+        location:req.body.location,
+        email: req.body.email
     })
     .save()
     .then(result => {
@@ -44,8 +43,6 @@ exports.createOneRequest = (req, res, next) => {
     });
 };
 
-
-
 exports.getRequestByLocation = (req, res, next) => {
     const  location= req.params.location;
     Request
@@ -59,7 +56,6 @@ exports.getRequestByLocation = (req, res, next) => {
         })
 };
 
-
 exports.getRequestByStatus = (req, res, next) => {
     const  status= req.params.request_status;
     Request
@@ -72,7 +68,6 @@ exports.getRequestByStatus = (req, res, next) => {
             next(error);
         })
 };
-
 
 exports.updateOneReuqest = (req, res, next) => {
     const requestId = req.params.requestId;
