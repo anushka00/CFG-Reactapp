@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-
-
 const paramedicsSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     patient_id: mongoose.Schema.Types.ObjectId,
