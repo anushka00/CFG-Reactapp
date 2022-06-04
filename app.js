@@ -24,6 +24,10 @@ app.use((req, res, next) => {
     }
     next();
 });
+// Routes which should handle requests
+app.use('/paramedics', paramedicRoutes);
+app.use('/serviceprovider', serviceprovideRoutes);
+app.use('/request', requestRoutes);
 
 
 // Handle Error Requests
