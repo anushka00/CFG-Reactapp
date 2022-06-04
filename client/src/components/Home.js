@@ -4,6 +4,8 @@ import web from "../images/img2.jpg"
 import { Navbar } from './Navbar'
 import  Signpara from "../components/Signpara";
 import Signsprov from '../components/Signsprov';
+import LoginPage from '../components/LoginPage';
+
 export const Home = () => {
   return (
   <>
@@ -22,19 +24,19 @@ export const Home = () => {
                </h2>
                <div className="mt-3">
                  <NavLink to="/signpara" className='btn-get-started'>
-                   SIGN UP FOR PARAMEDICS 
+                   SIGN UP FOR PARAMEDICS
 
                  </NavLink>
                </div>
 
                <div className="mt-3">
                  <NavLink to="/signsprov" className='btn-get-started'>
-                   SIGN UP FOR SERVICE PROVIDERS 
+                   SIGN UP FOR SERVICE PROVIDERS
                  </NavLink>
                </div>
 
                <div className="mt-3">
-                 <NavLink to=" " className='btn-get-started'>
+                 <NavLink to="/login" className='btn-get-started'>
                   LOGIN
                  </NavLink>
                </div>
@@ -50,7 +52,7 @@ export const Home = () => {
        </div>
 
      </section>
-    
-     </> 
+
+     </>
   )
 }

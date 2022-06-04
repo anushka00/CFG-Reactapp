@@ -20,10 +20,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.5",
     "morgan": "^1.10.0",
-<<<<<<< HEAD
-    "react-bootstrap": "^2.4.0"
-=======
+    "react-bootstrap": "^2.4.0",
     "nodemailer": "^6.7.5"
->>>>>>> 27f8af342c5c6c41b4d648c1033765849f5820ee
   }
 }
