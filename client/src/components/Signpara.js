@@ -10,11 +10,15 @@ function Signpara() {
   const [password, setPassword] = useState('');
   const [contact, setContact] = useState('');
 
-  // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
+ 
+
+
+
 
   // Handling the name change
+
   const handleName = (e) => {
     setName(e.target.value);
     setSubmitted(false);
@@ -27,19 +31,25 @@ function Signpara() {
 
 
 
-  // Handling the email change
+
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setSubmitted(false);
   };
 
-  // Handling the password change
+
+ 
   const handlePassword = (e) => {
     setPassword(e.target.value);
     setSubmitted(false);
   };
 
-  // Handling the form submission
+ 
+
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name === '' || email === '' || password === '') {
@@ -50,7 +60,7 @@ function Signpara() {
     }
   };
 
-  // Showing success message
+ 
   const successMessage = () => {
     return (
       <div
@@ -63,7 +73,9 @@ function Signpara() {
     );
   };
 
-  // Showing error message if error is true
+
+  
+
   const errorMessage = () => {
     return (
       <div
@@ -101,14 +113,16 @@ function Signpara() {
         <h1>Signup For Paramedic</h1>
       </div>
 
+
       {/* Calling to the methods */}
+
       <div className="messages">
         {errorMessage()}
         {successMessage()}
       </div>
 
       <form>
-        {/* Labels and inputs for form data */}
+        
         <label className="label">Name</label>
         <input onChange={handleName} className="input"
           value={name} type="text" />
@@ -124,9 +138,9 @@ function Signpara() {
         <label className="label">Password</label>
         <input onChange={handlePassword} className="input"
           value={password} type="password" />
-
-        <button onClick={registerUser} className="btn" type="submit">
-          Submit
+ 
+        <button onClick={handleSubmit} className="btn" type="submit">
+   Signup
         </button>
       </form>
     </div>
