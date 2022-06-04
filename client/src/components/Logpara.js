@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "./Navbar";
-import './lpara.css'
+import './lpara.css';
+// import { Link } from "react-router-dom";
 export const Logpara = () => {
 
  return(
@@ -36,6 +37,7 @@ export const Logpara = () => {
            </div>
            <button type="submit" label="req"  className="btn btn-danger">Create a Request</button>
            <button type="button" class="btn btn-success">Check the Status</button>
+           {/* <Link to="/Checkstatus_P" className="btn btn-success">Check the Status</Link> */}
           </form>
           
        </div>
