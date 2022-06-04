@@ -1,14 +1,14 @@
 .formpage{
 
   margin-top:20vh;
-  background-color: rgb(239, 236, 232);
+  background-color: rgb(249, 254, 255);
 
 }
 
 
 .form{
-    box-shadow:2px 5px 7px rgba(213, 82, 17, 0.509);
-      background-color: rgb(248, 224, 197);
+    box-shadow:2px 5px 7px rgba(17, 135, 213, 0.509);
+      background-color: rgb(197, 248, 248);
       padding:10px;
       margin-left:30vw;
       margin-right:20vw;
@@ -32,7 +32,7 @@
      font-size: larger;
      padding: 5px;
      margin: 2px;
-     border: 2px solid rgba(180, 54, 54, 0.479);
+     border: 2px solid rgba(54, 170, 180, 0.479);
      border-radius: 5px;
      
    }
