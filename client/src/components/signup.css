@@ -16,25 +16,25 @@
     }
 
     .data{
-  
+
       text-align: center;
-      
+
     }
-    
+
    .label{
      display: block;
      font-size: larger;
      color: black;
      padding: 5px;
    }
-    
+
    .input{
      font-size: larger;
      padding: 5px;
      margin: 2px;
      border: 2px solid rgba(54, 170, 180, 0.479);
      border-radius: 5px;
-     
+
    }
    .btn{
      color: white;
@@ -53,7 +53,7 @@
      display: flex;
      justify-content: center;
    }
-    
+
    .error{
      display: block;
      background-color: red;
@@ -64,7 +64,7 @@
      margin-bottom: 5px;
      border-radius: 10px;
    }
-    
+
    .success{
      display: block;
      background-color: lightblue;

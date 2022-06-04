@@ -1,7 +1,7 @@
 .whole{
     padding-top: 80px;
     background-color:rgb(156, 249, 249);
-    
+
     margin: 0 -5px;
 }
 .whole2{
@@ -13,9 +13,9 @@
 
 .card {
     /* Add shadows to create the "card" effect */
-    margin: 0 auto; 
-    float: none; 
-    margin-bottom: 10px; 
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color:snow;
@@ -28,23 +28,23 @@
     padding-left: 85px;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+
   }
 
 
   .card div{
     grid-row: 2/3;
     align-content: center;
-    
-   
+
+
   }
-  
+
   /* On mouse-over, add a deeper shadow */
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    
+
   }
-  
+
   /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
