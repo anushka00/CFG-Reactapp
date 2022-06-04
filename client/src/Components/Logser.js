@@ -1,10 +1,17 @@
 import React from 'react';
 import "./Checkstatus_P.css";
 
-
-const Checkstatus_P = () => {
+const Logser = () => {
   return (
-      <div className='whole'>
+    <div className='whole'>
+    <div className="searchForm">
+        <form>
+          <input
+            placeholder="Search for..."
+            value={this.state.query}
+            onChange={this.handleInputChange}
+          />
+        </form></div>
     <div className="wrapper">
       <Card
         patient_ID="1"
@@ -25,11 +32,7 @@ const Checkstatus_P = () => {
 
 
     </div>
-    <div className='matter'>
-    <h5 className='text-center'><b>Color</b></h5>
-    <p className='text-success'><b>Green</b>-Accepted</p>
-    <p className='text-danger'><b>Red</b>-Rejected</p>
-    </div>
+    
     </div>
   );
 }
@@ -51,7 +54,7 @@ function Card(props) {
     
     
 
-  );
+  )
 }
 
-export default Checkstatus_P;
+export default Logser;
