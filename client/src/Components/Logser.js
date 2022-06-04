@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Checkstatus_P.css";
 
 const Logser = () => {
   return (
     <div className='whole'>
-    <div className="searchForm">
+    {/* <div className="searchForm">
         <form>
           <input
             placeholder="Search for..."
             value={this.state.query}
             onChange={this.handleInputChange}
           />
-        </form></div>
+        </form></div> */}
     <div className="wrapper">
       <Card
         patient_ID="1"
@@ -38,6 +38,13 @@ const Logser = () => {
 }
 
 function Card(props) {
+  const [style, setStyle] = useState("cont");
+  
+  const changeStyle = () => {
+    console.log("you just clicked");
+  
+    setStyle("cont2");
+  };
   return (
       
     <div className='whole2'>
@@ -46,6 +53,18 @@ function Card(props) {
       <p className="card__title"><b>Patient_ID:</b> {props.patient_ID}</p>
         <p className="card__title"><b>Service:</b> {props.service}</p>
         <p className="card__description"><b>Location:</b> {props.location}</p>
+        <button className="button_acc" onClick={changeStyle}>
+          Accept
+        </button>
+        <a href="#" class="card-link">Reject</a>
+
+
+{/*         
+        <Link className="nav-link "  to="Signup">SignUp</Link>
+          </li>
+          <li className="nav-item">
+          <Link className="nav-link "  to="Signin">SignIn</Link> */}
+
       </div>
     </div>
     <br></br>

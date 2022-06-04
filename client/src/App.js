@@ -7,8 +7,10 @@ import Signpara from "./components/Signpara";
 import Signsprov from "./components/Signsprov";
 import LoginPage from './components/LoginPage';
 
+
 const App = () => {
   return (
+   
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
