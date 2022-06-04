@@ -20,7 +20,7 @@ exports.getAllRequest = (req, res, next) => {
 
 exports.createOneRequest = (req, res, next) => {
 
-    console.log("Creating Order...")
+    console.log("Creating Request...")
     return new Request({
         _id: mongoose.Types.ObjectId(),
         requested_service:req.body.requested_service,
@@ -102,33 +102,33 @@ exports.deleteOneRequest = (req, res, next) => {
 };
 
 
-// exports.sendMail = (req, res, next) => {
-//     var transporter = nodemailer.createTransport({
-//       host: 'smtp.gmail.com',
-//       port: 465,
-//       secure: true,
-//       auth: {
-//           user: process.env.MAIL,
-//           pass: process.env.PASSWORD
-//       }
-//     });
-//
-//     var mailOptions = {
-//       from: process.env.MAIL,
-//       to: req.body.to,
-//       subject: req.body.subject,
-//       text: req.body.text
-//     };
-//
-//     transporter.sendMail(mailOptions, function(error, info){
-//       if (error) {
-//         console.log(error);
-//       }
-//       else {
-//         console.log('Email sent: ' + info.response);
-//         return res.status(200).json({
-//             result: "Email Send Successfully",
-//         });
-//       }
-//     });
-//   };
+exports.sendMail = (req, res, next) => {
+    var transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+          user: process.env.MAIL,
+          pass: process.env.PASSWORD
+      }
+    });
+
+    var mailOptions = {
+      from: process.env.MAIL,
+      to: req.body.to,
+      subject: req.body.subject,
+      text: req.body.text
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      }
+      else {
+        console.log('Email sent: ' + info.response);
+        return res.status(200).json({
+            result: "Email Send Successfully",
+        });
+      }
+    });
+  };
