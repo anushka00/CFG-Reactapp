@@ -2,6 +2,8 @@ import React , {useState} from 'react'
 import './signup.css'
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+// import { Navbar } from './Navbar'
+
 
 function Signpara() {
 
@@ -114,6 +116,9 @@ function Signpara() {
   }
 
   return (
+    <>
+    
+        {/* <Navbar/> */}
 
     <div className="formpage">
     <div className="form">
@@ -152,6 +157,7 @@ function Signpara() {
       </form>
     </div>
     </div>
+    </>
   );
 }
 
