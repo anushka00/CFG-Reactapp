@@ -7,6 +7,9 @@ require("dotenv").config();
 
 const serviceprovideRoutes = require('./api/routes/serviceprovider');
 const requestRoutes=require('./api/routes/request');
+const paramedicRoutes =require('./api/routes/paramedics');
+
+
 mongoose.connect(process.env.MONGO_URL_DEV, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const app = express();
@@ -28,7 +31,7 @@ app.use((req, res, next) => {
     next();
 });
 // Routes which should handle requests
-//app.use('/paramedics', paramedicRoutes);
+app.use('/paramedics', paramedicRoutes);
 app.use('/serviceprovider', serviceprovideRoutes);
 app.use('/request', requestRoutes);
 
