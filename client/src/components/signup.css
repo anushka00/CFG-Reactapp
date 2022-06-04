@@ -1,7 +1,18 @@
+.formpage{
+
+  margin-top:10vh;
+  background-color: rgb(239, 236, 232);
+
+}
+
+
 .form{
-    box-shadow:2px 5px 7px rgba(78, 23, 16, 0.509);
-      background-color: antiquewhite;
+    box-shadow:2px 5px 7px rgba(201, 50, 50, 0.509);
+      background-color: rgb(231, 208, 178);
       padding:10px;
+      margin-left:30vw;
+      margin-right:20vw;
+      margin-top:20px;
     }
    .label{
      display: block;

@@ -85,7 +85,8 @@ function Signsprov() {
 
   return (
       <>
-       <div className="form">
+          <div className="formpage">
+            <div className="form">
       <div>
         <h1>Signup For Service Provider</h1>
       </div>
@@ -168,6 +169,7 @@ function Signsprov() {
   
   <button type="submit" class="btn btn-primary">Signup</button>
 </form>
+</div>
 </div>
 </>
   )

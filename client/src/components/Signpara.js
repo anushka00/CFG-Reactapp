@@ -108,14 +108,13 @@ function Signpara() {
   }
 
   return (
+
+    <div className="formpage">
     <div className="form">
       <div>
-        <h1>Signup For Paramedic</h1>
+        <h3 style={{textAlign:"center"}}>Signup For Paramedic</h3>
       </div>
-
-
-     
-
+    
       <div className="messages">
         {errorMessage()}
         {successMessage()}
@@ -143,6 +142,7 @@ function Signpara() {
    Signup
         </button>
       </form>
+    </div>
     </div>
   );
 }
