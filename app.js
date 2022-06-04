@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require("dotenv").config();
-
+const paramedicRoutes=require('./api/routes/paramedics');
 mongoose.connect(process.env.MONGO_URL_DEV, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const app = express();
@@ -26,8 +26,8 @@ app.use((req, res, next) => {
 });
 // Routes which should handle requests
 app.use('/paramedics', paramedicRoutes);
-app.use('/serviceprovider', serviceprovideRoutes);
-app.use('/request', requestRoutes);
+//app.use('/serviceprovider', serviceprovideRoutes);
+//app.use('/request', requestRoutes);
 
 
 // Handle Error Requests
