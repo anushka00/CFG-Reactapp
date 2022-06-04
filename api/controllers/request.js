@@ -1,8 +1,7 @@
 const { request } = require('express');
 const mongoose = require('mongoose');
-var nodemailer = require('nodemailer');
-
 const Request = require('../models/request');
+var nodemailer = require('nodemailer');
 
 exports.getAllRequest = (req, res, next) => {
     Request
@@ -20,28 +19,27 @@ exports.getAllRequest = (req, res, next) => {
 };
 
 exports.createOneRequest = (req, res, next) => {
-  const myReq = createReq(req);
 
-  myReq
-    .save()
-    .then(myReq => {
-      res.status(200).json({
-        message: 'Request Added Successfully!',
-        memory: {
-          _id: myReq._id,
-          requested_service: myReq.requested_service,
-          patientId: myReq.patientId,
-          email: myReq.email,
-          location: myReq.location,
-          service_provider: myReq.service_provider,
-          request_status: myReq.request_status
-        }
-      });
+    console.log("Creating Order...")
+    return new Request({
+        _id: mongoose.Types.ObjectId(),
+        requested_service:req.body.requested_service,
+        patientId:req.body.patientId,
+        request_status: req.body.request_status,
+        service_provider: req.body.service_provider,
+        location:req.body.location
     })
-    .catch(error => {
-      next(error);
+    .save()
+    .then(result => {
+        res.status(200).json({
+            request: result
+        });
+    })
+    .catch(err => {
+        res.status(500).json({
+            error: err
+        });
     });
-
 };
 
 exports.getRequestByLocation = (req, res, next) => {
@@ -104,45 +102,33 @@ exports.deleteOneRequest = (req, res, next) => {
 };
 
 
-exports.sendMail = (req, res, next) => {
-    var transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
-      auth: {
-          user: process.env.MAIL,
-          pass: process.env.PASSWORD
-      }
-    });
-
-    var mailOptions = {
-      from: process.env.MAIL,
-      to: req.body.to,
-      subject: req.body.subject,
-      text: req.body.text
-    };
-
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      }
-      else {
-        console.log('Email sent: ' + info.response);
-        return res.status(200).json({
-            result: "Email Send Successfully",
-        });
-      }
-    });
-  };
-
-  function createReq(req) {
-  	return new Request ({
-      _id: new mongoose.Types.ObjectId(),
-  		requested_service: req.body.requested_service,
-  		patientId: req.body.patientId,
-  		email: req.body.email,
-  		location: req.body.location,
-  		service_provider: req.body.service_provider,
-  		request_status: req.body.request_status,
-  	});
-  }
+// exports.sendMail = (req, res, next) => {
+//     var transporter = nodemailer.createTransport({
+//       host: 'smtp.gmail.com',
+//       port: 465,
+//       secure: true,
+//       auth: {
+//           user: process.env.MAIL,
+//           pass: process.env.PASSWORD
+//       }
+//     });
+//
+//     var mailOptions = {
+//       from: process.env.MAIL,
+//       to: req.body.to,
+//       subject: req.body.subject,
+//       text: req.body.text
+//     };
+//
+//     transporter.sendMail(mailOptions, function(error, info){
+//       if (error) {
+//         console.log(error);
+//       }
+//       else {
+//         console.log('Email sent: ' + info.response);
+//         return res.status(200).json({
+//             result: "Email Send Successfully",
+//         });
+//       }
+//     });
+//   };

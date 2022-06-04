@@ -6,8 +6,7 @@ const requestSchema = mongoose.Schema({
     patientId:{type: String},
     request_status: {type: String},
     service_provider: { type: String},
-    location:{type:String},
-    email: {type:String}
+    location:{type:String}
 });
 
 module.exports = mongoose.model('Request', requestSchema);
