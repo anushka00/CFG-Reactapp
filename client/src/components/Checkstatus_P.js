@@ -1,49 +1,58 @@
-import React from 'react';
-import "./Checkstatus_P.css"; 
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Checkstatus_P.css";
 import {Navbar} from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 
 const Checkstatus_P = () => {
+
+  const navigate = useNavigate();
+
+  const [requests, setRequests] = useState([]);
+
+  useEffect(() => {
+
+    axios.get(`http://localhost:5000/request/`).then(res => {
+      setRequests(res.data.orders);
+    }).catch((error) => {
+      navigate('/');
+    });
+
+    }, []);
+
   return (
-      <div className='whole'> 
+    <>
+    <Navbar />
+      <div className='whole'>
       <h1 style={{"textAlign":"center"}} >CHECK STATUS</h1>
     <div className="wrapper">
-      <Card
-        patient_ID="1"
-        service="consult"
-        location="hyd"
-        status="Approved"
-      />
+      {requests.map((req, index) => {
+            return (
 
-        <Card
-        patient_ID="2"
-        service="icu"
-        location="chennai"
-        status="Approved"
-
-      />
-      <Card
-        patient_ID="3"
-        service="medicine"
-        location="mumbai"
-        status="Rejected"
-
-      />
-
+              <Card
+                patient_ID={req.paramedic_id}
+                service={req.requested_service}
+                location={req.location}
+                status={req.request_status}
+              />
+      );
+    })}
 
     </div>
-    
+
     </div>
+    </>
   );
 }
 
 function Card(props) {
   return (
-     
-    
+
+
     <div className='whole2'>
-        {/* <Navbar /> */}
-    <div border="secondary" className="card">
+
+    <div style={{ backgroundColor: props.status==="Accepted" ? "#519259" : props.status==="Pending" ? "#ffffff" : "#FF1818" }} border="secondary" className="card">
       <div className="card__body">
       <p className="card__title"><b>Patient_ID:</b> {props.patient_ID}</p>
         <p className="card__title"><b>Service:</b> {props.service}</p>
@@ -53,10 +62,10 @@ function Card(props) {
     </div>
     <br></br>
     </div>
-    
-    
-    
-    
+
+
+
+
 
   );
 }

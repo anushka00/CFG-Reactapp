@@ -1,8 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "./Navbar";
 import './lpara.css';
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+
 export const Logpara = () => {
+
+const navigate = useNavigate();
+
+const [req, setReq] = useState({
+    patientId: "",
+    requested_service: "",
+    password:"",
+    request_status: "Pending",
+    location: ""
+});
+
+function checkStatus(){
+  navigate("/checkStatus");
+}
+
+function createRequest(){
+
+console.log(req);
+
+  axios.post("http://localhost:5000/request/", req).then(response => {
+        console.log("Request Successful!");
+  });
+
+  setReq({
+    patientId: "",
+    requested_service: "",
+    password:"",
+    request_status: "Pending",
+    location: ""
+  });
+
+}
+
+function handleChange(event) {
+
+  const { name, value } = event.target;
+
+    setReq((preValues) => {
+      return {
+        ...preValues,
+        [name]: value
+      };
+    });
+}
 
  return(
      <>
@@ -13,36 +60,29 @@ export const Logpara = () => {
          <form>
            <div className="input-name">
            <i class="fa-solid fa-user"></i>
-           <input placeholder="Enter Id" className="name" />
+           <input onChange={handleChange} className="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Patient ID" name="patientId" value={req.patientId} />
            </div>
 
            <div className="input-name">
-             <select className="country">
-             <option value="1" >Types of Services </option>
-                      <option value="2">Clinic Consultation</option>
-                      <option value="3" >Surgery</option>
-                      <option value="3" >Medicinal Items</option>
-                      <option value="4">Vacant Beds/Rooms</option>
+             <select name="requested_service" onChange={handleChange} value={req.requested_service} className="form-control">
+             <option value="select" >Types of Services </option>
+                      <option value="Clinic Consultation">Clinic Consultation</option>
+                      <option value="Surgery" >Surgery</option>
+                      <option value="Medicinal Items" >Medicinal Items</option>
+                      <option value="Vacant Beds/Rooms">Vacant Beds/Rooms</option>
              </select>
            </div>
 
-           <div className="input-name">
-             <select className="country">
-             <option value="1" >Location </option>
-                      <option value="1">Delhi</option>
-                      <option value="2" >Bangalore</option>
-                      <option value="3" >Chennai</option>
-                      <option value="4">Mumbai</option>
-             </select>
+           <div>
+           <input onChange={handleChange} className="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Location" name="location" value={req.location} />
            </div>
-           <button type="submit" label="req"  className="btn btn-danger">Create a Request</button>
-           <button type="button" class="btn btn-success">Check the Status</button>
+           <button type="submit" onClick={createRequest} label="req"  className="btn btn-danger">Create a Request</button>
+           <button type="button" onClick={checkStatus} class="btn btn-success">Check the Status</button>
            {/* <Link to="/Checkstatus_P" className="btn btn-success">Check the Status</Link> */}
           </form>
-          
+
        </div>
      </div>
 </>
  );
 }
-

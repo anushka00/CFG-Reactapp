@@ -6,7 +6,7 @@ import {Logpara} from "./components/Logpara";
 import Signpara from "./components/Signpara";
 import Signsprov from "./components/Signsprov";
 import LoginPage from './components/LoginPage';
-
+import Checkstatus_P from './components/Checkstatus_P';
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
           <Route exact path="/signpara" element={<Signpara />} />
           <Route exact path="/loginpara" element={<Logpara />}/>
           <Route exact path="/signsprov" element={<Signsprov />} />
-          <Route exact path="/Checkstatus_P" element={<Checkstatus_P />} />
+          <Route exact path="/checkStatus" element={<Checkstatus_P />} />
         </Routes>
       </BrowserRouter>
   );
