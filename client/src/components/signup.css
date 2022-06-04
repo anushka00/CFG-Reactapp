@@ -1,0 +1,58 @@
+.form{
+ 
+    box-shadow:2px 5px 7px rgba(78, 23, 16, 0.509);
+      background-color: antiquewhite;
+      padding:10px;
+    }
+   .label{
+     display: block;
+     font-size: larger;
+     color: black;
+     padding: 5px;
+   }
+    
+   .input{
+     font-size: larger;
+     padding: 5px;
+     margin: 2px;
+     border: 2px solid rgba(180, 54, 54, 0.479);
+     border-radius: 5px;
+     
+   }
+   .btn{
+     color: white;
+     background-color: rgba(255, 0, 0, 0.817);
+     border-radius: 8px;
+     font-size: 15px;
+     display: block;
+     padding: 5px;
+     margin: 10px auto;
+     border: 3px solid rgba(24, 69, 215, 0.372);
+   }
+    .btn:hover{
+      background-color: red;
+    }
+   .messages{
+     display: flex;
+     justify-content: center;
+   }
+    
+   .error{
+     display: block;
+     background-color: red;
+     color: white;
+     width: auto;
+     height: 50px;
+     padding: 5px;
+     margin-bottom: 5px;
+     border-radius: 10px;
+   }
+    
+   .success{
+     display: block;
+     background-color: lightblue;
+     color: black;
+     width: fit-content;
+     height: 50px;
+     padding: 5px;
+   }
