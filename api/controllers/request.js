@@ -6,7 +6,6 @@ var nodemailer = require('nodemailer');
 exports.getAllRequest = (req, res, next) => {
     Request
         .find()
-        .select(' _id requested_service patientId request_status service_provider location email')
         .exec()
         .then(request => {
             res.status(200).json({
@@ -47,7 +46,6 @@ exports.getRequestByLocation = (req, res, next) => {
     const  location= req.params.location;
     Request
         .find({location:location})//what is the query of string
-        .select(' _id requested_service patientId request_status service_provider location email')
         .exec()
         .then(request => {
             res.status(201).json(request)
@@ -61,7 +59,6 @@ exports.getRequestByStatus = (req, res, next) => {
     const  status= req.params.request_status;
     Request
         .find({request_status:status})//what is the query of string
-        .select(' _id requested_service patientId request_status service_provider location email')
         .exec()
         .then(request => {
             res.status(201).json(request)
