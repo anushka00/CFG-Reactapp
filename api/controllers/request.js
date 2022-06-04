@@ -22,7 +22,7 @@ exports.createOneRequest = (req, res, next) => {
 
     console.log("Creating Order...")
     return new Request({
-        paramedic_id: mongoose.Types.ObjectId(),
+        _id: mongoose.Types.ObjectId(),
         requested_service:req.body.requested_service,
         patientId:req.body.patientId,
         request_status: req.body.request_status,
@@ -71,7 +71,7 @@ exports.getRequestByStatus = (req, res, next) => {
 
 exports.updateOneReuqest = (req, res, next) => {
     const requestId = req.params.requestId;
-    Order
+    Request
         .update({ _id: requestId }, { $set: req.body })
         .exec()
         .then(result => {
@@ -84,6 +84,24 @@ exports.updateOneReuqest = (req, res, next) => {
             next(error);
         });
 };
+
+
+exports.deleteOneRequest = (req, res, next) => {
+    const requestId = req.params.requestId;
+    Request
+        .remove({ _id:requestId })
+        .exec()
+        .then(result => {
+            return res.status(200).json({
+                message: 'Deleted request!',
+                result: result
+            });
+        })
+        .catch(error => {
+            next(error);
+        });
+};
+
 
 exports.sendMail = (req, res, next) => {
     var transporter = nodemailer.createTransport({
