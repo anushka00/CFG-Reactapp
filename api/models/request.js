@@ -7,11 +7,7 @@ const requestSchema = mongoose.Schema({
     request_status: {type: String},
     service_provider: { type: String},
     location:{type:String},
-    email: {
-        type: String,
-        unique: true,
-        match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-    }
+    email: {type:String}
 });
 
 module.exports = mongoose.model('Request', requestSchema);

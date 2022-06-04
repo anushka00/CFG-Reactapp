@@ -30,7 +30,7 @@ function LoginPage(){
 
       axios.post("http://localhost:5000/paramedics/login", user).then(response => {
             console.log("Paramedic Login Successful");
-            navigate('/loginpara');
+            navigate('/loginpara',{state:{email:response.data.user.email}});
       });
 
       setUser({

@@ -1,41 +1,57 @@
 import React, { useState, useEffect } from "react";
 import { Navbar } from "./Navbar";
 import './lpara.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-
 
 export const Logpara = () => {
 
+  const location = useLocation();
+  const email = location.state.email;
+
+  const [req, setReq] = useState({
+      patientId: "",
+      requested_service: "",
+      request_status: "Pending",
+      location: "",
+      email: ""
+  });
+
+  useEffect(() => {
+      const email = location.state.email;
+      setReq({
+        patientId: "",
+        requested_service: "",
+        request_status: "Pending",
+        location: "",
+        email: email
+      });
+    }, []);
+
 const navigate = useNavigate();
 
-const [req, setReq] = useState({
-    patientId: "",
-    requested_service: "",
-    password:"",
-    request_status: "Pending",
-    location: ""
-});
+
 
 function checkStatus(){
   navigate("/checkStatus");
 }
 
-function createRequest(){
+function createRequest(event){
 
 console.log(req);
 
   axios.post("http://localhost:5000/request/", req).then(response => {
         console.log("Request Successful!");
   });
-
+  const email = location.state.email;
   setReq({
     patientId: "",
     requested_service: "",
-    password:"",
     request_status: "Pending",
-    location: ""
+    location: "",
+    email: email
   });
+  event.preventDefault();
 
 }
 
@@ -49,6 +65,9 @@ function handleChange(event) {
         [name]: value
       };
     });
+
+    event.preventDefault();
+    console.log(req);
 }
 
  return(
@@ -78,7 +97,6 @@ function handleChange(event) {
            </div>
            <button type="submit" onClick={createRequest} label="req"  className="btn btn-danger">Create a Request</button>
            <button type="button" onClick={checkStatus} class="btn btn-success">Check the Status</button>
-           {/* <Link to="/Checkstatus_P" className="btn btn-success">Check the Status</Link> */}
           </form>
 
        </div>

@@ -5,14 +5,12 @@
     margin: 0 -5px;
 }
 .whole2{
-    /* background-color: rgb(244, 236, 226); */
     background-color:rgb(156, 249, 249);
     opacity: 0.9;
 }
 
 
-.card {
-    /* Add shadows to create the "card" effect */
+.card1 {
     margin: 0 auto;
     float: none;
     margin-bottom: 10px;
@@ -39,13 +37,11 @@
 
   }
 
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
   }
 
-  /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
   }

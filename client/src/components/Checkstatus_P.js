@@ -52,7 +52,7 @@ function Card(props) {
 
     <div className='whole2'>
 
-    <div style={{ backgroundColor: props.status==="Accepted" ? "#519259" : props.status==="Pending" ? "#ffffff" : "#FF1818" }} border="secondary" className="card">
+    <div style={{ backgroundColor: props.status==="Accepted" ? "#519259" : props.status==="Pending" ? "#ffffff" : "#FF1818" }} border="secondary" className="card1">
       <div className="card__body">
       <p className="card__title"><b>Patient_ID:</b> {props.patient_ID}</p>
         <p className="card__title"><b>Service:</b> {props.service}</p>
@@ -62,10 +62,6 @@ function Card(props) {
     </div>
     <br></br>
     </div>
-
-
-
-
 
   );
 }

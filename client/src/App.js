@@ -6,7 +6,7 @@ import {Logpara} from "./components/Logpara";
 import Signpara from "./components/Signpara";
 import Signsprov from "./components/Signsprov";
 import LoginPage from './components/LoginPage';
-import Checkstatus_P from './components/Checkstatus_P';
+import Checkstatus_P from "./components/Checkstatus_P";
 
 const App = () => {
   return (
