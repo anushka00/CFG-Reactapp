@@ -6,23 +6,21 @@ import {Logpara} from "./components/Logpara";
 import Signpara from "./components/Signpara";
 import Signsprov from "./components/Signsprov";
 import LoginPage from './components/LoginPage';
-import Checkstatus_P from "./components/Checkstatus_P";
 
 
 const App = () => {
   return (
-    <Checkstatus_P />
-      // <BrowserRouter>
-      //   <Routes>
-      //     <Route exact path="/" element={<Home />} />
-      //     <Route exact path="/about" element={<About />} />
-      //     <Route exact path="/login" element={<LoginPage />} />
-      //     <Route exact path="/signpara" element={<Signpara />} />
-      //     <Route exact path="/loginpara" element={<Logpara />}/>
-      //     <Route exact path="/signsprov" element={<Signsprov />} />
-      //     <Route exact path="/Checkstatus_P" element={<Checkstatus_P />} />
-      //   </Routes>
-      // </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/login" element={<LoginPage />} />
+          <Route exact path="/signpara" element={<Signpara />} />
+          <Route exact path="/loginpara" element={<Logpara />}/>
+          <Route exact path="/signsprov" element={<Signsprov />} />
+          <Route exact path="/Checkstatus_P" element={<Checkstatus_P />} />
+        </Routes>
+      </BrowserRouter>
   );
 };
 export default App;
