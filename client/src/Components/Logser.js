@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./Checkstatus_P.css";
+import "./Logser.css";
 
 const Logser = () => {
   return (
@@ -38,12 +38,12 @@ const Logser = () => {
 }
 
 function Card(props) {
-  const [style, setStyle] = useState("cont");
+  const [style, setStyle] = useState("card");
   
   const changeStyle = () => {
     console.log("you just clicked");
   
-    setStyle("cont2");
+    setStyle("card_accept");
   };
   return (
       

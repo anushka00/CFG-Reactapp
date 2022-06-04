@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Checkstatus_P.css";
+import "./Logser.css";
 
 
 const Checkstatus_P = () => {

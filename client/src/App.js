@@ -6,21 +6,22 @@ import {Logpara} from "./components/Logpara";
 import Signpara from "./components/Signpara";
 import Signsprov from "./components/Signsprov";
 import LoginPage from './components/LoginPage';
-
+import Logser from "./components/Logser";
+import Checkstatus_P from "./components/Checkstatus_P";
 
 const App = () => {
   return (
-   
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/login" element={<LoginPage />} />
-          <Route exact path="/signpara" element={<Signpara />} />
-          <Route exact path="/loginpara" element={<Logpara />}/>
-          <Route exact path="/signsprov" element={<Signsprov />} />
-        </Routes>
-      </BrowserRouter>
+   <Checkstatus_P />
+      // <BrowserRouter>
+      //   <Routes>
+      //     <Route exact path="/" element={<Home />} />
+      //     <Route exact path="/about" element={<About />} />
+      //     <Route exact path="/login" element={<LoginPage />} />
+      //     <Route exact path="/signpara" element={<Signpara />} />
+      //     <Route exact path="/loginpara" element={<Logpara />}/>
+      //     <Route exact path="/signsprov" element={<Signsprov />} />
+      //   </Routes>
+      // </BrowserRouter>
   );
 };
 export default App;
