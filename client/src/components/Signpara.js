@@ -5,6 +5,7 @@ import axios from "axios";
 
 function Signpara() {
 
+  
   const navigate = useNavigate();
 
 
@@ -113,20 +114,21 @@ function Signpara() {
   }
 
   return (
+
+    <div className="formpage">
     <div className="form">
       <div>
-        <h1>Signup For Paramedic</h1>
+        <h3 style={{textAlign:"center"}}>Signup For Paramedic</h3>
       </div>
-
-
-      {/* Calling to the methods */}
-
+    
       <div className="messages">
         {errorMessage()}
         {successMessage()}
       </div>
 
-      <form>
+      
+        
+      <form className="data">
 
         <label className="label">Name</label>
         <input onChange={handleName} className="input"
@@ -148,6 +150,7 @@ function Signpara() {
    Signup
         </button>
       </form>
+    </div>
     </div>
   );
 }
