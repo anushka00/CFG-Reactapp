@@ -16,12 +16,10 @@ const App = () => {
           <Route exact path="/signpara" element={<Signpara />} />
           <Route exact path="/loginpara" element={<Logpara />}/>
           <Route exact path="/signsprov" element={<Signsprov />} />
-
-          <Route exact path="/Signpara" element={<Signpara />} />
-
-          
         </Routes>
       </BrowserRouter>
   );
 };
 export default App;
+
+
