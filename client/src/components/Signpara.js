@@ -120,7 +120,7 @@ function Signpara() {
         {successMessage()}
       </div>
 
-      <form>
+      <form className="data">
         
         <label className="label">Name</label>
         <input onChange={handleName} className="input"

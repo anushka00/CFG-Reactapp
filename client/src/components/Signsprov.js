@@ -98,7 +98,7 @@ function Signsprov() {
         {errorMessage()}
         {successMessage()}
       </div>
-    <form>
+    <form className="data">
        <label className="label">Name of the Hospital/Client</label>
         <input onChange={handleName} className="input"
           value={name} type="text" />
