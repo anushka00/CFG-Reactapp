@@ -60,7 +60,7 @@ function LoginPage(){
                     <div className="card-body p-0">
                         <div className="row">
                           <div className="col-lg-4 d-none d-lg-flex">
-                              <div className="flex-grow-1 bg-login-image" style={{backgroundImage: "url(https://cfstatic.giveindia.org/50954e44-2946-40c2-b9cc-8ed1c60aa166.png)"}}>
+                              <div className="flex-grow-1 bg-login-image" style={{backgroundImage: "url(https://www.resizepixel.com/Image/dyyh7js286/Preview/dakshas.jpg?v=c80c58c2-0830-49ac-b75c-8bff60155a7d)"}}>
                               </div>
                             </div>
                             <div className="col-lg-6">

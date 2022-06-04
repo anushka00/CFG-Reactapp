@@ -1,7 +1,12 @@
 import React , {useState} from 'react'
 import './signup.css'
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 
 function Signsprov() {
+
+  const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -17,15 +22,15 @@ function Signsprov() {
     setName(e.target.value);
     setSubmitted(false);
   };
- 
-  
-  
+
+
+
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setSubmitted(false);
   };
- 
+
 
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -53,7 +58,7 @@ function Signsprov() {
       setError(false);
     }
   };
- 
+
 
   const successMessage = () => {
     return (
@@ -66,8 +71,8 @@ function Signsprov() {
       </div>
     );
   };
- 
-  
+
+
   const errorMessage = () => {
     return (
       <div
@@ -79,20 +84,46 @@ function Signsprov() {
       </div>
     );
   };
- 
 
-  
+  function registerUser(event) {
+
+    var user = {
+      email:email,
+      password:password,
+      name: name,
+      location:location,
+      services:services
+    }
+
+    axios.post("http://localhost:5000/serviceprovider/signup", user).then(response => {
+      console.log(response.data);
+      alert("Registration Successful!");
+      navigate('/login');
+    });
+
+    console.log(user);
+    event.preventDefault();
+
+}
+
+
 
   return (
       <>
        <h2>Signup for Service Provider </h2>
+       {/* Calling to the methods */}
+
+      <div className="messages">
+        {errorMessage()}
+        {successMessage()}
+      </div>
        <form clasName="form">
 
- 
+
        <label className="label">Name of the Hospital/Client</label>
         <input onChange={handleName} className="input"
           value={name} type="text" />
- 
+
         <label className="label">Email</label>
         <input onChange={handleEmail} className="input"
           value={email} type="email" />
@@ -100,7 +131,7 @@ function Signsprov() {
         <label className="label">Password</label>
         <input onChange={handlePassword} className="input"
           value={password} type="password" />
- 
+
  <label className="label">Location</label>
         <select  className="label input"   onChange={handleLocation} value={location} required="">
           <option value="" classname="label input">Select your State</option>
@@ -141,23 +172,23 @@ function Signsprov() {
           <option value="del">Delhi</option>
           <option value="lak">Lakshadweep</option>
           <option value="pudu">Puducherry</option>
-        
-      
+
+
 
         </select>
-  
+
         <label className="label">Services</label>
 
 
- <select  className="label input"   onChange={handleServices} value={services} required="">
+ <select  className="label input"   onChange={handleServices} value={services}>
   <option value="" classname="label input">Select your service</option>
   <option value="npo">Non-Profit hospital</option>
   <option value="gov">Government hospital</option>
   <option value="prv">Private Hospital</option>
   </select>
-  
-  
-  <button type="submit" class="btn btn-primary">Signup</button>
+
+
+  <button type="submit" onClick={ registerUser } class="btn btn-primary">Signup</button>
 </form>
 </>
   )

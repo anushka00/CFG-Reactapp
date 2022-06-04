@@ -103,8 +103,8 @@ function Signpara() {
 
       axios.post("http://localhost:5000/paramedics/signup", user).then(response => {
         console.log(response.data);
+        alert("Registration Successful!");
         navigate('/login');
-
       });
 
       console.log(user);
