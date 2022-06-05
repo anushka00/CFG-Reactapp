@@ -1,0 +1,88 @@
+.whole2{
+
+    background-color:rgb(156, 249, 249);
+    opacity: 0.9;
+
+}
+
+
+.card1 {
+
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color:rgb(219, 207, 247);
+    transition: 0.3s;
+    width:300px;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    margin: 0 auto;
+    display: grid;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+
+
+  }
+ .search{
+   position: relative;
+   left:36%;
+ }
+
+
+  .card div{
+    grid-row: 2/3;
+    align-content: center;
+
+
+  }
+
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+  }
+
+
+  .container {
+    padding: 2px 16px;
+  }
+
+
+
+
+  .btn{
+    display: inline-block;
+    background-color: white;
+    color:black
+
+  }
+  .btn-1:hover {
+    background-color: rgb(43, 194, 63);
+
+
+  }
+
+  .btn-2:hover{
+    background-color: rgb(250, 40, 40);
+  }
+
+  .btn_search{
+    position: absolute;
+    left:60%;
+  }
+
+  .btn_search:hover{
+    background-color: rgb(219, 207, 247);
+  }
+
+  .wrapper{
+    padding:110px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      background-color:rgb(156, 249, 249);
+  }
