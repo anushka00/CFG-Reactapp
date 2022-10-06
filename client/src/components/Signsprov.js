@@ -1,6 +1,6 @@
 import React , {useState} from 'react'
 import './signup.css'
-import web from "../images/cross1.png"
+// import web from "../images/cross1.png"
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from "./Navbar";
@@ -114,9 +114,9 @@ function Signsprov() {
       <>
       <Navbar/>
       <div className='main'>
-    <div className='col-lg-10 order-2 order-lg-1 header-img'>
+    {/* <div className='col-lg-10 order-2 order-lg-1 header-img'>
     <img src={web} className='img-fluid animated' alt='home img'/>
-    </div>
+    </div> */}
     </div>
             <div className="form">
       <div className="text-center">

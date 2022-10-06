@@ -3,7 +3,7 @@ import './signup.css'
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { Navbar } from './Navbar'
-import web from "../images/nurse.png"
+// import web from "../images/nurse.png"
 
 function Signpara() {
 
@@ -118,9 +118,9 @@ function Signpara() {
 <>
     <Navbar/>
     <div className='main'>
-    <div className='col-lg-7 order-3 order-lg-1 header-img'>
+    {/* <div className='col-lg-7 order-3 order-lg-1 header-img'>
     <img src={web} className='img-fluid animated' alt='home img'/>
-    </div>
+    </div> */}
     </div>
     <div className="form">
       <div>
